@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>University of Life</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            width: 50%;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 50px;
+        }
+		.btn{
+			background-color: rgb(68, 82, 114, 0.5);
+		}
+    </style>
+</head>
+<body>
+	  <h1>Welcome, <span th:text="${#authentication.principal.username}"></span>!</h1>	  
+	  <p>Your roles:</p>
+	  <ul>
+	      <li th:each="role : ${#authentication.principal.authorities}" th:text="${role}"></li>
+	  </ul>
+
+    <div class="container">
+        <h3 class="my-4"> University Of The Life </h3>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <form th:action="@{/matricular/matricula}" method="get">
+                    <button type="submit" class="btn btn-primary btn-block">Matricular</button>
+                </form>
+            </div>
+            <div class="col-md-6 mb-4">
+                <form th:action="@{#}" method="get">
+                    <button type="submit" class="btn btn-primary btn-block">Inscripcion Alumnos</button>
+                </form>
+            </div>
+			<div class="col-md-6 mb-4">
+                <form th:action="@{#}" method="get">
+                    <button type="submit" class="btn btn-primary btn-block">Crear Cursos</button>
+                </form>
+            </div>
+            <div class="col-md-6 mb-4">
+                <form th:action="@{#}" method="get">
+                    <button type="submit" class="btn btn-primary btn-block">Registrar Nota</button>
+                </form>
+            </div>
+            <div class="col-md-6 mb-4">
+                <form th:action="@{#}" method="get">
+                    <button type="submit" class="btn btn-primary btn-block">Leer Notas</button>
+                </form>
+            </div>
+			<div class="col-md-6 mb-4">
+                <form th:action="@{/vistas/especialidad}" method="get">
+                    <button type="submit" class="btn btn-info btn-block">Vista Especialidad/Curso</button>
+                </form>
+            </div>
+           
+			<div class="col-md-6 mb-4">
+	                <a href="/logout" class="btn btn-danger btn-block">Logout</a>
+	        </div>
+        </div>
+    </div>
+</body>
+</html>

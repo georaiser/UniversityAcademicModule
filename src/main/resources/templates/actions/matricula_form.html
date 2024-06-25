@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción de Alumno a Curso</title>
+</head>
+<body>
+    <h2>Seleccione un alumno y un curso para inscribir</h2>
+    
+    <form action="/matricular/alumno-curso" method="post">
+        <label for="alumno">Alumno:</label>
+        <select id="alumno" name="alumnoId">
+            <option value="">Seleccione un alumno</option>
+            <th:block th:each="alumno : ${alumnos}">
+                <option th:value="${alumno.alumnoId}" th:text="${alumno.alumnoNombre}"></option>
+            </th:block>
+        </select>
+        <br><br>
+        <label for="curso">Curso:</label>
+        <select id="curso" name="cursoId">
+            <option value="">Seleccione un curso</option>
+            <th:block th:each="curso : ${cursos}">
+                <option th:value="${curso.cursoId}" th:text="${curso.cursoDescripcion}"></option>
+            </th:block>
+        </select>
+        <br><br>
+        <button type="submit">Inscribir</button>
+    </form>
+    
+    <!-- Mostrar mensajes de éxito o error -->
+    <div th:if="${mensaje}" style="color: green;">[[${mensaje}]]</div>
+    <div th:if="${error}" style="color: red;">[[${error}]]</div>
+</body>
+</html>
