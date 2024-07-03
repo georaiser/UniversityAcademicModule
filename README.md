@@ -1,4 +1,4 @@
-# Delicia Eterna
+# UniversityAcademicModule
 
 The University Academic Module is a Spring Boot application designed to manage academic operations within a university. This application provides functionalities for managing courses, students, faculty, departments, and enrollments.
 
@@ -120,6 +120,12 @@ Static resources include assets such as CSS files, which are used to style the w
 ### HTML Templates
 
 HTML templates are used to render dynamic web pages. Thymeleaf is used as the templating engine, allowing for integration with Spring's model attributes. For example, `access-denied.html` displays a message when a user tries to access a restricted page without the necessary permissions.
+
+<p align="left">
+  <img src="img1.png" width="250" alt="img">
+  <img src="img1.png" width="250" alt="img">
+  <img src="img1.png" width="250" alt="img">
+</p>
 
 ## Contributing
 
